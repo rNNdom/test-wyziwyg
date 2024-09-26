@@ -1,8 +1,8 @@
 // navigation.json
 export const navigationBar = [
   {
-    title: 'Datos',
-    path: '/datos'
+    title: 'Sobre Nosotros',
+    path: '/about-us'
   },
   {
     title: 'Foro',

@@ -1,18 +1,15 @@
 import Card from '@/components/Card'
-import ComponentEditorForm from '@/components/ComponentEditorForm'
-import RenderHTML from '@/components/RenderHTML'
+import ComponentManager from '@/components/ComponentManager'
 import { TableDemo } from '@/components/TableTest'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className='flex items-center gap-10 h-[100vh]'>
-      <Card title='Main Page' className='w-5/6 h-5/6'>
-        <RenderHTML pageName='mainpage' />
+    <div className='flex flex-col gap-10'>
+      <h1 className='font-bold text-2xl'>Main Page</h1>
+      <Card>
         <TableDemo />
       </Card>
-      <Card title='Editor de Componentes' className='w-2/5 h-5/6'>
-        <ComponentEditorForm />
-      </Card>
+      <ComponentManager pageId='home' />
     </div>
   )
 }
