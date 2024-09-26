@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 function Navbar() {
   return (
-    <nav className='sticky z-0 top-0 border-b bg-white/30 backdrop-blur-md'>
+    <nav className='sticky z-10 top-0 border-b bg-white/30 backdrop-blur-md'>
       <div id='nav-container' className='max-w-5xl mx-auto px-4 sm:px-4 flex justify-between items-center py-4'>
         <Link href='/' className=''>
           <h4 className='text-2xl font-bold'>Inicio</h4>
