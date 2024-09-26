@@ -1,6 +1,5 @@
 import React from 'react'
 import ComponentEditorForm from './ComponentEditorForm'
-import Button from './Button'
 
 type ComponentEditorModalProps = {
   isOpen: boolean
@@ -14,8 +13,7 @@ export default function ComponentEditorModal({ isOpen, onSave, setOpen }: Compon
   return (
     <div className='modal'>
       <div className='modal-content'>
-        <Button onClick={setOpen}>Close</Button>
-        <ComponentEditorForm onSave={onSave} />
+        <ComponentEditorForm onSave={onSave} setOpen={setOpen} />
       </div>
     </div>
   )
