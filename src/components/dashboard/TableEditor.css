@@ -1,0 +1,186 @@
+/* General layout improvements */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+}
+
+/* General table styles */
+.tiptap table {
+  border-collapse: collapse;
+  width: 100%; /* Asegurar que la tabla ocupe todo el ancho disponible */
+  table-layout: auto; /* Ajustar las columnas según el contenido */
+  margin-bottom: 1.5rem; /* Espaciado inferior para separar las tablas */
+}
+
+.tiptap th,
+.tiptap td {
+  border: 1px solid #ddd; /* Bordes más suaves */
+  padding: 12px 15px; /* Mayor espaciado dentro de cada celda */
+  text-align: left; /* Alinear texto a la izquierda */
+  vertical-align: middle; /* Alinear el contenido verticalmente en el medio */
+  word-wrap: break-word; /* Evitar desbordes del texto largo */
+  font-size: 15px; /* Ajustar el tamaño de la fuente */
+}
+
+.tiptap th {
+  background-color: #f5f5f5; /* Fondo gris claro para los encabezados */
+  font-weight: 600; /* Negrita ligera */
+  color: #333; /* Mejor contraste para accesibilidad */
+  text-transform: uppercase; /* Texto en mayúsculas para los encabezados */
+}
+
+.tiptap td {
+  background-color: #fff; /* Fondo blanco para las celdas */
+  color: #555; /* Color de texto ligeramente gris para una mejor lectura */
+}
+
+.tiptap tr:nth-child(even) td {
+  background-color: #fafafa; /* Alternar colores de filas para mejorar la legibilidad */
+}
+
+/* Ajustar el comportamiento de las celdas según su contenido */
+.tiptap th,
+.tiptap td {
+  max-width: 250px; /* Limitar el ancho máximo de las celdas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos si el contenido es demasiado largo */
+}
+
+/* Estilo para la celda seleccionada */
+.tiptap .selectedCell:after {
+  content: "";
+  background: rgba(0, 0, 0, 0.1); /* Color para indicar la celda seleccionada */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Estilo del manejador de redimensionamiento de columnas */
+.tiptap .column-resize-handle {
+  background-color: #8e44ad; /* Color púrpura para el manejador de redimensionamiento */
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize; /* Cambiar cursor al pasar sobre el manejador */
+}
+
+/* Estilo de los botones en la barra de herramientas */
+.toolbar button {
+  background-color: #4caf50; /* Verde vibrante para los botones */
+  color: white; /* Texto blanco */
+  padding: 12px 25px; /* Mayor espaciado en los botones */
+  margin: 10px; /* Espaciado entre los botones */
+  border: none; /* Sin bordes */
+  border-radius: 6px; /* Bordes redondeados más suaves */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Manito cuando se pasa el mouse */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto suave en hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.toolbar button:hover {
+  background-color: #45a049; /* Color ligeramente más oscuro en hover */
+  transform: translateY(-2px); /* Efecto de elevación en hover */
+}
+
+.toolbar button:disabled {
+  background-color: #ddd; /* Color gris cuando está deshabilitado */
+  color: #aaa; /* Texto gris claro */
+  cursor: not-allowed; /* Indicador de que no se puede hacer clic */
+}
+
+/* Estilo para el select */
+.toolbar select {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #4caf50; /* Bordes verdes */
+  border-radius: 6px;
+  margin: 10px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.toolbar select:hover {
+  border-color: #45a049; /* Cambiar el color del borde en hover */
+}
+
+.toolbar select:focus {
+  outline: none;
+  border-color: #4caf50; /* Mantener el color verde cuando se enfoca */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Sombra para indicar que está enfocado */
+}
+
+/* Alineación del contenedor de la toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Espaciado entre los elementos */
+  flex-wrap: wrap;
+  margin-bottom: 20px; /* Espacio entre la barra de herramientas y el contenido */
+  justify-content: flex-start; /* Alinear al inicio */
+}
+
+/* Ajustar el ancho del select */
+.toolbar select {
+  width: auto; /* El ancho del select se ajustará según el contenido */
+}
+
+/* Margen para la tabla y su contenedor */
+.tiptap .tableWrapper {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+/* Cursor de redimensionamiento */
+.tiptap.resize-cursor {
+  cursor: col-resize; /* Cursor para redimensionar columnas */
+}
+
+/* Estilo mejorado para las tarjetas que contienen las tablas */
+.table-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  margin: 20px 0;
+  padding: 20px; /* Mayor espaciado interno */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.table-card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más profunda en hover */
+  transform: translateY(-5px); /* Efecto de elevación */
+}
+
+.table-card-header {
+  font-size: 20px; /* Fuente más grande */
+  font-weight: bold;
+  margin-bottom: 15px; /* Mayor espaciado */
+  color: #333;
+}
+
+.table-card-body table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-card-body th,
+.table-card-body td {
+  border: 1px solid #ccc;
+  padding: 12px; /* Mayor padding para mayor legibilidad */
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.table-card-body th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
